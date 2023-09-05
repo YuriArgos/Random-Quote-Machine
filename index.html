@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Quote Machine</title>
+    <script>
+        const QUOTEBANK = [
+            {
+                quote: "Now I am become Death, the destroyer of worlds.",
+                author: 'J. Robert Oppenheimer'
+            }, {
+                quote: "Two things are infinite: the universe and human stupidity; and I'm not sure about the universe.",
+                author: 'Albert Einstein'
+            }, {
+                quote: "A person who never made a mistake never tried anything new.",
+                author: 'Albert Einstein'
+            }
+            
+    ];
+        window.onload = init;
+        function init() {
+            generateQuote()
+            
+        }
+
+        function generateQuote() {
+            let quoteSize = QUOTEBANK.length;
+            let randomIndex = Math.floor(Math.random() * quoteSize);
+            let randomQuoteData = QUOTEBANK[randomIndex]
+
+
+            document.getElementById("text").innerText = randomQuoteData.quote
+            document.getElementById("author").innerText = randomQuoteData.author
+
+        }
+    </script>
+    <style>
+        * {
+            font-size: 1.5rem;
+            padding: 20px;
+        }
+        body {
+            background-color: rgb(243, 156, 18);
+        }
+         #text, #author, a {
+            background-color: white;
+        }
+
+        
+
+
+        
+
+        
+    </style>
+</head>
+<body>
+    <wrapper id="quote-box">
+        <div id="text">
+
+        </div>
+        <div id="author">
+
+        </div>
+        <button id="new-quote" onclick="generateQuote()">New Quote</button>
+        <a target="_blank" href="https://twitter.com/intent/tweet?hashtags=quotes&related=freecodecamp&text=%22In%20order%20to%20succeed%2C%20your%20desire%20for%20success%20should%20be%20greater%20than%20your%20fear%20of%20failure.%22%20Bill%20Cosby" id="tweet-quote">Tweet Quote</a>
+    </wrapper>
+    
+
+    
+    <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+</body>
+</html>
